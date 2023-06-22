@@ -13,14 +13,14 @@
 
 ---
 - name: Install python3, docker, docker-compose
-  hosts: docker_server
+  hosts: gcp
   become: yes
   gather_facts: False
   tasks:
     - name: Install python3 and docker
       vars:
         ansible_python_interpreter: /usr/bin/python
-      ansible.builtin.yum: 
+      ansible.builtin.apt: 
         name: 
           - python3
           - docker
